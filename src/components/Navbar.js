@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 
+const links = ["home", "about", "resume", "projects", "services", "contact"];
+
 export default function Navbar() {
   const { t, darkMode, setDarkMode } = useTheme();
   const [active, setActive] = useState("home");
-  const links = ["home", "about", "resume", "projects", "services", "contact"];
 
-  // Scroll spy: update active section based on scroll position
   useEffect(() => {
     const sections = links.map((link) => document.getElementById(link));
     const observer = new IntersectionObserver(
@@ -23,7 +23,7 @@ export default function Navbar() {
       if (section) observer.observe(section);
     });
     return () => observer.disconnect();
-  }, [links]);
+  }, []);
 
   return (
     <nav
