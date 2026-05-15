@@ -29,66 +29,18 @@ export default function Resume() {
   ];
 
   const projects = [
-    {
-      title: "Student Performance Prediction",
-      tech: "Machine Learning + Python",
-      desc: "AI system predicting academic performance with 85.42% accuracy"
-    },
-    {
-      title: "AI Document Detection System",
-      tech: "OCR + NLP",
-      desc: "Document classification and text extraction using Tesseract OCR"
-    },
-    {
-      title: "AI-Powered Billing System",
-      tech: "React + Firebase",
-      desc: "Smart invoicing system with payment tracking and forecasting"
-    },
-    {
-      title: "Smart Goal Tracking App",
-      tech: "React Native + MongoDB",
-      desc: "Cross-platform app for goal setting and progress tracking"
-    },
-    {
-      title: "e-Vitals App",
-      tech: "React Native",
-      desc: "Medical app for patient vitals monitoring"
-    },
-    {
-      title: "Student Portal",
-      tech: "MERN Stack",
-      desc: "Full-stack platform for courses and grades"
-    },
-    {
-      title: "Hospital Management System",
-      tech: "Firebase + React",
-      desc: "Complete HMS for patient records and appointments"
-    },
-    {
-      title: "Library Management System",
-      tech: "React.js",
-      desc: "Digital library platform for book inventory"
-    },
-    {
-      title: "E-Commerce Platform",
-      tech: "MERN Stack",
-      desc: "Full-featured online store with payment integration"
-    },
-    {
-      title: "Chat Application",
-      tech: "Socket.io + React",
-      desc: "Real-time messaging app with group chats and file sharing"
-    },
-    {
-      title: "Task Management System",
-      tech: "React + Node.js",
-      desc: "Project management tool with task assignment and tracking"
-    },
-    {
-      title: "Portfolio CMS",
-      tech: "Next.js + MongoDB",
-      desc: "Content management system for developers"
-    }
+    { title: "Student Performance Prediction", tech: "ML + Python", desc: "85.42% accuracy prediction system" },
+    { title: "AI Document Detection System", tech: "OCR + NLP", desc: "Document classification and extraction" },
+    { title: "AI-Powered Billing System", tech: "React + Firebase", desc: "Smart invoicing with forecasting" },
+    { title: "Smart Goal Tracking App", tech: "React Native + MongoDB", desc: "Cross-platform goal tracking" },
+    { title: "e-Vitals App", tech: "React Native", desc: "Medical vitals monitoring" },
+    { title: "Student Portal", tech: "MERN Stack", desc: "Full-stack course platform" },
+    { title: "Hospital Management System", tech: "Firebase + React", desc: "Patient records management" },
+    { title: "Library Management System", tech: "React.js", desc: "Digital library platform" },
+    { title: "E-Commerce Platform", tech: "MERN Stack", desc: "Online store with payments" },
+    { title: "Chat Application", tech: "Socket.io + React", desc: "Real-time messaging app" },
+    { title: "Task Management System", tech: "React + Node.js", desc: "Project management tool" },
+    { title: "Portfolio CMS", tech: "Next.js + MongoDB", desc: "Developer portfolio CMS" }
   ];
 
   const handleDownloadCV = () => {
@@ -110,7 +62,7 @@ export default function Resume() {
     <section
       id="resume"
       style={{
-        padding: "100px 20px",
+        padding: "80px 20px",
         background: t.bg,
         display: "flex",
         justifyContent: "center",
@@ -130,7 +82,7 @@ export default function Resume() {
         <div
           style={{
             background: t.card,
-            padding: "clamp(25px, 4vw, 40px)",
+            padding: "clamp(20px, 4vw, 40px)",
             borderRadius: "20px",
             border: `1px solid ${t.border}`,
           }}
@@ -138,14 +90,15 @@ export default function Resume() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "40px"
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "30px"
             }}
+            className="resume-grid"
           >
             {/* LEFT COLUMN */}
             <div>
-              <h3 style={{ color: t.text, marginBottom: "4px", fontSize: "24px" }}>Anfal Ramzan</h3>
-              <p style={{ color: t.primary, fontWeight: "600", marginTop: "0", fontSize: "14px" }}>
+              <h3 style={{ color: t.text, marginBottom: "4px", fontSize: "clamp(20px, 4vw, 24px)" }}>Anfal Ramzan</h3>
+              <p style={{ color: t.primary, fontWeight: "600", marginTop: "0", fontSize: "13px" }}>
                 Software Engineer | Full Stack Developer | AI/ML
               </p>
 
@@ -153,10 +106,10 @@ export default function Resume() {
                 <p style={{ color: t.text, fontSize: "13px", marginBottom: "8px", fontWeight: "600" }}>
                   💻 Core Stack:
                 </p>
-                <p style={{ color: t.muted, fontSize: "13px", marginBottom: "6px" }}>
+                <p style={{ color: t.muted, fontSize: "13px", marginBottom: "4px" }}>
                   React, React Native, Next.js, Node.js, Python
                 </p>
-                <p style={{ color: t.muted, fontSize: "13px", marginBottom: "6px" }}>
+                <p style={{ color: t.muted, fontSize: "13px", marginBottom: "4px" }}>
                   MongoDB, MySQL, Firebase, PostgreSQL
                 </p>
                 <p style={{ color: t.muted, fontSize: "13px" }}>
@@ -165,7 +118,7 @@ export default function Resume() {
               </div>
 
               <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Contact</h3>
-              <div style={{ color: t.muted, lineHeight: "1.8", fontSize: "13px" }}>
+              <div style={{ color: t.muted, lineHeight: "1.8", fontSize: "13px", wordBreak: "break-word" }}>
                 <p>📞 +92 327 4931708</p>
                 <p>📧 anfalramzan548@gmail.com</p>
                 <p>📍 Rawalpindi, Pakistan</p>
@@ -254,12 +207,12 @@ export default function Resume() {
                   <span 
                     key={i} 
                     style={{ 
-                      padding: "6px 14px", 
+                      padding: "6px 12px", 
                       background: hoveredSkill === `core-${i}` ? t.primary : `${t.primary}10`,
                       border: `1px solid ${hoveredSkill === `core-${i}` ? t.primary : `${t.primary}20`}`,
                       borderRadius: "25px", 
                       color: hoveredSkill === `core-${i}` ? "#fff" : t.primary, 
-                      fontSize: "12px",
+                      fontSize: "11px",
                       cursor: "pointer",
                       transition: "0.2s"
                     }}
@@ -277,12 +230,12 @@ export default function Resume() {
                   <span 
                     key={i} 
                     style={{ 
-                      padding: "6px 14px", 
+                      padding: "6px 12px", 
                       background: hoveredSkill === `ai-${i}` ? t.primary : `${t.primary}10`,
                       border: `1px solid ${hoveredSkill === `ai-${i}` ? t.primary : `${t.primary}20`}`,
                       borderRadius: "25px", 
                       color: hoveredSkill === `ai-${i}` ? "#fff" : t.primary, 
-                      fontSize: "12px",
+                      fontSize: "11px",
                       cursor: "pointer",
                       transition: "0.2s"
                     }}
@@ -300,12 +253,12 @@ export default function Resume() {
                   <span 
                     key={i} 
                     style={{ 
-                      padding: "6px 14px", 
+                      padding: "6px 12px", 
                       background: hoveredSkill === `soft-${i}` ? t.primary : `${t.primary}10`,
                       border: `1px solid ${hoveredSkill === `soft-${i}` ? t.primary : `${t.primary}20`}`,
                       borderRadius: "25px", 
                       color: hoveredSkill === `soft-${i}` ? "#fff" : t.primary, 
-                      fontSize: "12px",
+                      fontSize: "11px",
                       cursor: "pointer",
                       transition: "0.2s"
                     }}
@@ -323,12 +276,12 @@ export default function Resume() {
                   <span 
                     key={i} 
                     style={{ 
-                      padding: "6px 14px", 
+                      padding: "6px 12px", 
                       background: hoveredSkill === `other-${i}` ? t.primary : `${t.primary}10`,
                       border: `1px solid ${hoveredSkill === `other-${i}` ? t.primary : `${t.primary}20`}`,
                       borderRadius: "25px", 
                       color: hoveredSkill === `other-${i}` ? "#fff" : t.primary, 
-                      fontSize: "12px",
+                      fontSize: "11px",
                       cursor: "pointer",
                       transition: "0.2s"
                     }}
@@ -341,12 +294,12 @@ export default function Resume() {
               </div>
 
               <h3 style={{ color: t.text, fontSize: "18px" }}>Key Projects (40+)</h3>
-              <div style={{ color: t.muted, lineHeight: "1.6", fontSize: "13px", maxHeight: "400px", overflowY: "auto", paddingRight: "10px" }}>
+              <div style={{ color: t.muted, lineHeight: "1.6", fontSize: "13px", maxHeight: "350px", overflowY: "auto", paddingRight: "10px" }}>
                 {projects.map((proj, idx) => (
-                  <div key={idx} style={{ marginBottom: "14px" }}>
+                  <div key={idx} style={{ marginBottom: "12px" }}>
                     <strong style={{ color: t.primary }}>{proj.title}</strong>
-                    <span style={{ fontSize: "11px", color: t.textLight, marginLeft: "8px" }}>({proj.tech})</span>
-                    <p style={{ margin: "4px 0 0 0", fontSize: "12px", color: t.textLight }}>
+                    <span style={{ fontSize: "10px", color: t.textLight, marginLeft: "8px" }}>({proj.tech})</span>
+                    <p style={{ margin: "4px 0 0 0", fontSize: "11px", color: t.textLight }}>
                       {proj.desc}
                     </p>
                   </div>
@@ -359,6 +312,14 @@ export default function Resume() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .resume-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

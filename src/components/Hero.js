@@ -53,7 +53,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "100px 20px",
+        padding: "80px 20px",
         background: t.bg,
         position: "relative",
         overflow: "hidden",
@@ -79,15 +79,16 @@ export default function Hero() {
           maxWidth: "1200px",
           width: "100%",
           flexWrap: "wrap",
-          gap: "50px",
+          gap: "40px",
           position: "relative",
           zIndex: 1,
         }}
+        className="hero-container"
       >
-        <div style={{ flex: 1, minWidth: "280px" }}>
+        <div style={{ flex: 1, minWidth: "280px" }} className="hero-content">
           <h1
             style={{
-              fontSize: "clamp(38px, 8vw, 58px)",
+              fontSize: "clamp(32px, 8vw, 58px)",
               marginBottom: "16px",
               fontWeight: "700",
               lineHeight: "1.2",
@@ -131,9 +132,28 @@ export default function Hero() {
               50% { transform: translateY(-10px); }
               100% { transform: translateY(0px); }
             }
+            @media (max-width: 768px) {
+              .hero-container {
+                flex-direction: column-reverse !important;
+                text-align: center !important;
+              }
+              .hero-content {
+                text-align: center !important;
+              }
+              .hero-buttons {
+                justify-content: center !important;
+              }
+              .tech-stack {
+                justify-content: center !important;
+              }
+              .hero-desc {
+                margin-left: auto !important;
+                margin-right: auto !important;
+              }
+            }
           `}</style>
 
-          <p style={{ color: t.textLight, fontSize: "16px", maxWidth: "500px", lineHeight: "1.7" }}>
+          <p style={{ color: t.textLight, fontSize: "16px", maxWidth: "500px", lineHeight: "1.7" }} className="hero-desc">
             Software Engineer specializing in Full Stack Development and AI/ML integration. 
             Built 40+ production-ready applications with modern technologies.
           </p>
@@ -145,6 +165,7 @@ export default function Hero() {
               gap: "16px",
               flexWrap: "wrap",
             }}
+            className="hero-buttons"
           >
             <button
               type="button"
@@ -152,7 +173,7 @@ export default function Hero() {
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
               style={{
-                padding: "12px 32px",
+                padding: "12px 28px",
                 background: t.primary,
                 border: "none",
                 borderRadius: "40px",
@@ -178,7 +199,7 @@ export default function Hero() {
               <button
                 type="button"
                 style={{
-                  padding: "12px 32px",
+                  padding: "12px 28px",
                   background: "transparent",
                   border: `2px solid ${t.primary}`,
                   color: t.primary,
@@ -209,15 +230,16 @@ export default function Hero() {
               gap: "10px",
               flexWrap: "wrap",
             }}
+            className="tech-stack"
           >
             {["React", "React Native", "Node.js", "MongoDB", "Firebase", "Python", "AI/ML"].map((tech) => (
               <span
                 key={tech}
                 style={{
-                  padding: "6px 16px",
+                  padding: "6px 14px",
                   background: `${t.primary}08`,
                   borderRadius: "30px",
-                  fontSize: "13px",
+                  fontSize: "12px",
                   color: t.primary,
                   fontWeight: "500",
                   border: `1px solid ${t.primary}15`,
@@ -234,8 +256,9 @@ export default function Hero() {
             flex: 1,
             display: "flex",
             justifyContent: "center",
-            minWidth: "280px",
+            minWidth: "260px",
           }}
+          className="hero-image"
         >
           <div
             style={{
@@ -243,6 +266,8 @@ export default function Hero() {
               borderRadius: "30px",
               overflow: "hidden",
               animation: "float 3s ease-in-out infinite",
+              maxWidth: "320px",
+              width: "100%",
             }}
           >
             <div
@@ -259,7 +284,6 @@ export default function Hero() {
               alt="Anfal Ramzan - Software Engineer"
               style={{
                 width: "100%",
-                maxWidth: "380px",
                 height: "auto",
                 borderRadius: "30px",
                 objectFit: "cover",

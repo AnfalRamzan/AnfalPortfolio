@@ -96,44 +96,54 @@ export default function Projects() {
   const data = getData();
   const closeModal = () => setActiveMedia(null);
 
+  const tabsList = [
+    { id: "all", label: "All Projects", icon: "🎯" },
+    { id: "android", label: "Mobile Apps", icon: "📱" },
+    { id: "web", label: "Web Apps", icon: "💻" },
+    { id: "ai", label: "AI/ML", icon: "🤖" },
+    { id: "uiux", label: "UI/UX", icon: "🎨" }
+  ];
+
   return (
-    <section id="projects" style={{ padding: "100px 20px", background: t.bg, minHeight: "100vh" }}>
-      <div style={{ textAlign: "center", marginBottom: "60px" }}>
+    <section id="projects" style={{ padding: "80px 20px", background: t.bg, minHeight: "100vh" }}>
+      <div style={{ textAlign: "center", marginBottom: "50px" }}>
         <h2 style={{ 
-          fontSize: "clamp(32px, 6vw, 42px)", 
+          fontSize: "clamp(28px, 6vw, 42px)", 
           fontWeight: "700", 
           marginBottom: "16px",
           color: t.text
         }}>
           Featured Projects
         </h2>
-        <p style={{ color: t.textLight, fontSize: "16px", maxWidth: "600px", margin: "0 auto" }}>
+        <p style={{ color: t.textLight, fontSize: "15px", maxWidth: "600px", margin: "0 auto", padding: "0 16px" }}>
           Explore my latest work in mobile apps, web platforms, AI/ML, and UI/UX design
         </p>
       </div>
 
-      {/* Tab Buttons */}
-      <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", margin: "0 0 50px" }}>
-        {[
-          { id: "all", label: "All Projects", icon: "🎯" },
-          { id: "android", label: "Mobile Apps", icon: "📱" },
-          { id: "web", label: "Web Apps", icon: "💻" },
-          { id: "ai", label: "AI/ML", icon: "🤖" },
-          { id: "uiux", label: "UI/UX Design", icon: "🎨" }
-        ].map((item) => (
+      {/* Tab Buttons - Responsive */}
+      <div style={{ 
+        display: "flex", 
+        justifyContent: "center", 
+        gap: "10px", 
+        flexWrap: "wrap", 
+        margin: "0 0 40px",
+        padding: "0 10px"
+      }}>
+        {tabsList.map((item) => (
           <button
             key={item.id}
             onClick={() => setTab(item.id)}
             style={{
-              padding: "10px 28px",
+              padding: "8px 20px",
               borderRadius: "40px",
               border: `1px solid ${tab === item.id ? t.primary : t.border}`,
               background: tab === item.id ? t.primary : "transparent",
               color: tab === item.id ? "#fff" : t.text,
               cursor: "pointer",
               fontWeight: "500",
-              fontSize: "14px",
+              fontSize: "13px",
               transition: "all 0.2s ease",
+              whiteSpace: "nowrap",
             }}
           >
             {item.icon} {item.label}
@@ -154,13 +164,14 @@ export default function Projects() {
         </span>
       </div>
 
-      {/* Projects Grid */}
+      {/* Projects Grid - Responsive */}
       <div style={{ 
         display: "grid", 
-        gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", 
-        gap: "32px", 
+        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", 
+        gap: "25px", 
         maxWidth: "1300px", 
-        margin: "0 auto" 
+        margin: "0 auto",
+        padding: "0 10px"
       }}>
         {data.map((project, idx) => (
           <div
@@ -175,9 +186,9 @@ export default function Projects() {
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.transform = "translateY(-5px)";
               e.currentTarget.style.borderColor = t.primary;
-              e.currentTarget.style.boxShadow = `0 20px 40px ${t.shadow}`;
+              e.currentTarget.style.boxShadow = `0 15px 30px ${t.shadow}`;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
@@ -189,7 +200,7 @@ export default function Projects() {
             <div style={{ 
               position: "relative", 
               width: "100%", 
-              height: "240px", 
+              height: "200px", 
               background: "#0f172a", 
               overflow: "hidden" 
             }}>
@@ -212,15 +223,15 @@ export default function Projects() {
                     justifyContent: "center",
                   }}>
                     <div style={{ 
-                      width: "60px", 
-                      height: "60px", 
+                      width: "50px", 
+                      height: "50px", 
                       background: t.primary,
                       borderRadius: "50%", 
                       display: "flex", 
                       alignItems: "center", 
                       justifyContent: "center",
                     }}>
-                      <span style={{ color: "#fff", fontSize: "24px", marginLeft: "4px" }}>▶</span>
+                      <span style={{ color: "#fff", fontSize: "20px", marginLeft: "4px" }}>▶</span>
                     </div>
                   </div>
                 </>
@@ -236,16 +247,16 @@ export default function Projects() {
                   />
                   <span style={{ 
                     position: "absolute", 
-                    bottom: "12px", 
-                    right: "12px", 
+                    bottom: "10px", 
+                    right: "10px", 
                     background: t.primary, 
                     color: "#fff", 
-                    fontSize: "11px", 
-                    padding: "4px 10px", 
+                    fontSize: "10px", 
+                    padding: "3px 8px", 
                     borderRadius: "20px", 
                     fontWeight: "bold"
                   }}>
-                    📸 {project.images.length} images
+                    📸 {project.images.length}
                   </span>
                 </>
               ) : (
@@ -264,21 +275,21 @@ export default function Projects() {
             </div>
             
             {/* Content */}
-            <div style={{ padding: "20px" }}>
-              <h3 style={{ color: t.text, fontSize: "18px", marginBottom: "8px", fontWeight: "600" }}>
+            <div style={{ padding: "16px" }}>
+              <h3 style={{ color: t.text, fontSize: "16px", marginBottom: "8px", fontWeight: "600" }}>
                 {project.title}
               </h3>
-              <p style={{ color: t.textLight, fontSize: "13px", lineHeight: "1.5" }}>
-                {project.desc}
+              <p style={{ color: t.textLight, fontSize: "12px", lineHeight: "1.5" }}>
+                {project.desc.length > 100 ? project.desc.substring(0, 100) + "..." : project.desc}
               </p>
               <span style={{ 
                 display: "inline-block", 
-                marginTop: "12px", 
-                fontSize: "12px", 
+                marginTop: "10px", 
+                fontSize: "11px", 
                 color: t.primary, 
                 fontWeight: "500"
               }}>
-                Click to view details →
+                Click to view →
               </span>
             </div>
           </div>
@@ -309,7 +320,7 @@ export default function Projects() {
               maxWidth: "90vw", 
               maxHeight: "90vh", 
               background: t.card, 
-              borderRadius: "24px", 
+              borderRadius: "20px", 
               overflow: "auto",
             }}
           >
@@ -317,22 +328,22 @@ export default function Projects() {
               onClick={closeModal}
               style={{
                 position: "absolute",
-                top: "16px",
-                right: "16px",
-                width: "40px",
-                height: "40px",
+                top: "12px",
+                right: "12px",
+                width: "36px",
+                height: "36px",
                 borderRadius: "50%",
                 border: "none",
                 background: t.primary,
                 color: "#fff",
-                fontSize: "20px",
+                fontSize: "18px",
                 cursor: "pointer",
                 zIndex: 10,
               }}
             >
               ✕
             </button>
-            <div style={{ padding: "30px" }}>
+            <div style={{ padding: "20px" }}>
               {activeMedia.media && !videoErrors[activeMedia.title] ? (
                 <video
                   ref={videoRef}
@@ -340,17 +351,17 @@ export default function Projects() {
                   controls
                   autoPlay
                   playsInline
-                  style={{ maxWidth: "100%", maxHeight: "75vh", borderRadius: "16px" }}
+                  style={{ maxWidth: "100%", maxHeight: "70vh", borderRadius: "12px" }}
                   onError={() => handleVideoError(activeMedia.title)}
                 />
               ) : activeMedia.images ? (
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center", maxHeight: "70vh", overflowY: "auto" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "15px", justifyContent: "center", maxHeight: "65vh", overflowY: "auto" }}>
                   {activeMedia.images?.map((img, idx) => (
                     <img 
                       key={idx} 
                       src={img} 
                       alt={`${activeMedia.title} - ${idx + 1}`} 
-                      style={{ maxWidth: "300px", borderRadius: "12px" }}
+                      style={{ maxWidth: "280px", borderRadius: "10px", width: "100%" }}
                       onError={(e) => {
                         e.target.src = "https://placehold.co/300x200/1e293b/f97316?text=Image+not+found";
                       }}
@@ -358,19 +369,27 @@ export default function Projects() {
                   ))}
                 </div>
               ) : (
-                <div style={{ textAlign: "center", padding: "50px", color: t.muted }}>
+                <div style={{ textAlign: "center", padding: "40px", color: t.muted }}>
                   <p>Video preview not available</p>
                   <p style={{ fontSize: "14px", marginTop: "10px" }}>{activeMedia.desc}</p>
                 </div>
               )}
             </div>
-            <div style={{ padding: "20px 30px 30px", borderTop: `1px solid ${t.border}`, textAlign: "center" }}>
-              <h3 style={{ color: t.text, margin: 0 }}>{activeMedia.title}</h3>
-              <p style={{ color: t.textLight, marginTop: "8px" }}>{activeMedia.desc}</p>
+            <div style={{ padding: "16px 20px 20px", borderTop: `1px solid ${t.border}`, textAlign: "center" }}>
+              <h3 style={{ color: t.text, margin: 0, fontSize: "18px" }}>{activeMedia.title}</h3>
+              <p style={{ color: t.textLight, marginTop: "6px", fontSize: "13px" }}>{activeMedia.desc}</p>
             </div>
           </div>
         </div>
       )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          #projects div[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

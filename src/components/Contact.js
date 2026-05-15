@@ -70,36 +70,36 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" style={{ padding: "100px 20px", background: t.bg }}>
+    <section id="contact" style={{ padding: "80px 20px", background: t.bg }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "50px" }}>
+        <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <h2 style={{ 
-            fontSize: "clamp(32px, 6vw, 42px)", 
-            marginBottom: "16px", 
+            fontSize: "clamp(28px, 6vw, 42px)", 
+            marginBottom: "12px", 
             fontWeight: "700",
             color: t.text
           }}>
             Let's Work Together
           </h2>
-          <p style={{ color: t.textLight, maxWidth: "600px", margin: "0 auto" }}>
+          <p style={{ color: t.textLight, maxWidth: "600px", margin: "0 auto", fontSize: "15px", padding: "0 16px" }}>
             Have a project in mind? I'd love to hear about it.
           </p>
         </div>
 
-        <div style={{ display: "flex", gap: "50px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
           
           {/* Contact Info - Left Side */}
-          <div style={{ flex: 1, minWidth: "280px" }}>
+          <div style={{ flex: 1, minWidth: "260px" }}>
             <div style={{ 
               background: t.card, 
               borderRadius: "24px", 
-              padding: "30px", 
+              padding: "clamp(20px, 4vw, 30px)", 
               border: `1px solid ${t.border}`,
               height: "100%"
             }}>
-              <h3 style={{ color: t.text, marginBottom: "24px", fontSize: "22px" }}>Get in Touch</h3>
+              <h3 style={{ color: t.text, marginBottom: "20px", fontSize: "clamp(18px, 4vw, 22px)" }}>Get in Touch</h3>
               
               {contactMethods.map((method, idx) => (
                 <a 
@@ -107,13 +107,13 @@ export default function Contact() {
                   href={method.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  style={{ textDecoration: "none", display: "block", marginBottom: "20px" }}
+                  style={{ textDecoration: "none", display: "block", marginBottom: "16px" }}
                 >
                   <div style={{ 
                     display: "flex", 
                     alignItems: "center", 
                     gap: "15px", 
-                    padding: "14px", 
+                    padding: "12px", 
                     borderRadius: "16px", 
                     background: t.bg, 
                     border: `1px solid ${t.border}`, 
@@ -128,10 +128,10 @@ export default function Contact() {
                       e.currentTarget.style.transform = "translateX(0)"; 
                     }}
                   >
-                    <span style={{ fontSize: "28px" }}>{method.icon}</span>
-                    <div>
-                      <p style={{ color: t.textLight, fontSize: "12px", marginBottom: "4px" }}>{method.label}</p>
-                      <p style={{ color: t.text, fontWeight: "500", fontSize: "14px" }}>{method.value}</p>
+                    <span style={{ fontSize: "24px" }}>{method.icon}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <p style={{ color: t.textLight, fontSize: "11px", marginBottom: "2px" }}>{method.label}</p>
+                      <p style={{ color: t.text, fontWeight: "500", fontSize: "13px", wordBreak: "break-word" }}>{method.value}</p>
                     </div>
                   </div>
                 </a>
@@ -140,12 +140,12 @@ export default function Contact() {
           </div>
 
           {/* Contact Form - Right Side */}
-          <div style={{ flex: 1, minWidth: "280px" }}>
+          <div style={{ flex: 1, minWidth: "260px" }}>
             <form 
               onSubmit={sendEmail} 
               style={{ 
                 background: t.card, 
-                padding: "30px", 
+                padding: "clamp(20px, 4vw, 30px)", 
                 borderRadius: "24px", 
                 border: `1px solid ${t.border}`,
                 height: "100%",
@@ -153,7 +153,7 @@ export default function Contact() {
                 flexDirection: "column"
               }}
             >
-              <h3 style={{ color: t.text, marginBottom: "24px", fontSize: "22px" }}>Send a Message</h3>
+              <h3 style={{ color: t.text, marginBottom: "20px", fontSize: "clamp(18px, 4vw, 22px)" }}>Send a Message</h3>
               
               <input 
                 type="text" 
@@ -164,8 +164,8 @@ export default function Contact() {
                 required
                 style={{ 
                   width: "100%", 
-                  padding: "14px 16px", 
-                  marginBottom: "16px", 
+                  padding: "12px 14px", 
+                  marginBottom: "14px", 
                   background: t.bg, 
                   border: `1px solid ${t.border}`, 
                   borderRadius: "12px", 
@@ -187,8 +187,8 @@ export default function Contact() {
                 required
                 style={{ 
                   width: "100%", 
-                  padding: "14px 16px", 
-                  marginBottom: "16px", 
+                  padding: "12px 14px", 
+                  marginBottom: "14px", 
                   background: t.bg, 
                   border: `1px solid ${t.border}`, 
                   borderRadius: "12px", 
@@ -204,14 +204,14 @@ export default function Contact() {
               <textarea 
                 name="message" 
                 placeholder="Your Message" 
-                rows="5" 
+                rows="4" 
                 value={formData.message} 
                 onChange={handleChange}
                 required
                 style={{ 
                   width: "100%", 
-                  padding: "14px 16px", 
-                  marginBottom: "20px", 
+                  padding: "12px 14px", 
+                  marginBottom: "18px", 
                   background: t.bg, 
                   border: `1px solid ${t.border}`, 
                   borderRadius: "12px", 
@@ -229,10 +229,10 @@ export default function Contact() {
               {feedback.text && (
                 <p style={{ 
                   color: feedback.type === "success" ? "#22c55e" : "#ef4444", 
-                  fontSize: "13px", 
+                  fontSize: "12px", 
                   textAlign: "center", 
-                  marginBottom: "16px",
-                  padding: "10px",
+                  marginBottom: "14px",
+                  padding: "8px",
                   borderRadius: "10px",
                   background: feedback.type === "success" ? "#22c55e10" : "#ef444410"
                 }}>
@@ -241,12 +241,12 @@ export default function Contact() {
               )}
               
               {/* Button Centered */}
-              <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <div style={{ display: "flex", justifyContent: "center", marginTop: "5px" }}>
                 <button 
                   type="submit" 
                   disabled={isSending}
                   style={{ 
-                    padding: "14px 40px", 
+                    padding: "12px 32px", 
                     background: t.primary, 
                     border: "none", 
                     borderRadius: "40px", 
@@ -255,8 +255,8 @@ export default function Contact() {
                     cursor: isSending ? "not-allowed" : "pointer", 
                     transition: "0.2s",
                     opacity: isSending ? 0.7 : 1,
-                    fontSize: "15px",
-                    minWidth: "180px"
+                    fontSize: "14px",
+                    minWidth: "160px"
                   }}
                   onMouseEnter={(e) => {
                     if (!isSending) {

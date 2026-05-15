@@ -32,6 +32,14 @@ export default function About() {
     ]
   };
 
+  const tabs = [
+    { id: "frontend", label: "🎨 Frontend" },
+    { id: "backend", label: "⚙️ Backend" },
+    { id: "database", label: "🗄️ Database" },
+    { id: "aiMl", label: "🤖 AI/ML" },
+    { id: "tools", label: "🛠️ Tools" },
+  ];
+
   return (
     <section
       id="about"
@@ -44,11 +52,11 @@ export default function About() {
     >
       <div style={{ maxWidth: "1100px", width: "100%" }}>
         
-        <div style={{ marginBottom: "30px" }}>
+        <div style={{ marginBottom: "30px" }} className="about-header">
           <h2
             style={{
               color: t.text,
-              fontSize: "clamp(32px, 5vw, 42px)",
+              fontSize: "clamp(28px, 5vw, 42px)",
               fontWeight: "700",
               marginBottom: "12px",
             }}
@@ -69,7 +77,7 @@ export default function About() {
         <div
           style={{
             background: t.card,
-            padding: "30px",
+            padding: "clamp(20px, 4vw, 30px)",
             borderRadius: "20px",
             border: `1px solid ${t.border}`,
             marginBottom: "30px",
@@ -96,32 +104,34 @@ export default function About() {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: "40px",
+              gap: "30px",
               marginTop: "25px",
               paddingTop: "20px",
               borderTop: `1px solid ${t.border}`,
+              justifyContent: "space-around",
             }}
+            className="stats-container"
           >
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "28px", fontWeight: "700", color: t.primary }}>5+</div>
+              <div style={{ fontSize: "clamp(24px, 5vw, 28px)", fontWeight: "700", color: t.primary }}>5+</div>
               <div style={{ fontSize: "12px", color: t.textLight }}>Years Exp</div>
             </div>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "28px", fontWeight: "700", color: t.primary }}>40+</div>
+              <div style={{ fontSize: "clamp(24px, 5vw, 28px)", fontWeight: "700", color: t.primary }}>40+</div>
               <div style={{ fontSize: "12px", color: t.textLight }}>Projects</div>
             </div>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "28px", fontWeight: "700", color: t.primary }}>10+</div>
+              <div style={{ fontSize: "clamp(24px, 5vw, 28px)", fontWeight: "700", color: t.primary }}>10+</div>
               <div style={{ fontSize: "12px", color: t.textLight }}>Tech Stacks</div>
             </div>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "28px", fontWeight: "700", color: t.primary }}>100%</div>
+              <div style={{ fontSize: "clamp(24px, 5vw, 28px)", fontWeight: "700", color: t.primary }}>100%</div>
               <div style={{ fontSize: "12px", color: t.textLight }}>Satisfaction</div>
             </div>
           </div>
         </div>
 
-        <h3 style={{ color: t.text, marginBottom: "15px", fontSize: "22px" }}>Technical Skills</h3>
+        <h3 style={{ color: t.text, marginBottom: "15px", fontSize: "clamp(20px, 4vw, 22px)" }}>Technical Skills</h3>
 
         <div
           style={{
@@ -130,19 +140,14 @@ export default function About() {
             marginBottom: "20px",
             flexWrap: "wrap",
           }}
+          className="skill-tabs"
         >
-          {[
-            { id: "frontend", label: "🎨 Frontend" },
-            { id: "backend", label: "⚙️ Backend" },
-            { id: "database", label: "🗄️ Database" },
-            { id: "aiMl", label: "🤖 AI/ML" },
-            { id: "tools", label: "🛠️ Tools" },
-          ].map((tab) => (
+          {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveSkillTab(tab.id)}
               style={{
-                padding: "8px 20px",
+                padding: "8px 16px",
                 borderRadius: "30px",
                 border: `1px solid ${activeSkillTab === tab.id ? t.primary : t.border}`,
                 background: activeSkillTab === tab.id ? t.primary : "transparent",
@@ -151,6 +156,7 @@ export default function About() {
                 fontSize: "13px",
                 fontWeight: "500",
                 transition: "0.2s",
+                whiteSpace: "nowrap",
               }}
             >
               {tab.label}
@@ -161,7 +167,7 @@ export default function About() {
         <div
           style={{
             background: t.card,
-            padding: "25px",
+            padding: "clamp(20px, 4vw, 25px)",
             borderRadius: "16px",
             border: `1px solid ${t.border}`,
             marginBottom: "30px",
@@ -193,12 +199,12 @@ export default function About() {
               <span
                 key={index}
                 style={{
-                  padding: "6px 16px",
+                  padding: "6px 14px",
                   background: hoveredSkill === `${activeSkillTab}-${index}` ? t.primary : `${t.primary}08`,
                   color: hoveredSkill === `${activeSkillTab}-${index}` ? "#fff" : t.primary,
                   border: `1px solid ${hoveredSkill === `${activeSkillTab}-${index}` ? t.primary : `${t.primary}20`}`,
                   borderRadius: "30px",
-                  fontSize: "13px",
+                  fontSize: "12px",
                   cursor: "pointer",
                   transition: "0.2s",
                 }}
@@ -215,7 +221,7 @@ export default function About() {
           style={{
             marginTop: "30px",
             background: t.card,
-            padding: "20px",
+            padding: "clamp(16px, 3vw, 20px)",
             borderRadius: "16px",
             border: `1px solid ${t.border}`,
           }}
@@ -231,7 +237,7 @@ export default function About() {
           style={{
             marginTop: "30px",
             textAlign: "center",
-            padding: "20px",
+            padding: "clamp(16px, 3vw, 20px)",
             background: `${t.primary}05`,
             borderRadius: "16px",
           }}
@@ -241,6 +247,24 @@ export default function About() {
           </p>
         </div>
 
+        <style>{`
+          @media (max-width: 768px) {
+            .about-header {
+              text-align: center !important;
+            }
+            .skill-tabs {
+              justify-content: center !important;
+            }
+            .skill-tabs button {
+              white-space: normal !important;
+              font-size: 12px !important;
+              padding: 6px 14px !important;
+            }
+            .stats-container {
+              gap: 20px !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
