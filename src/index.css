@@ -9,27 +9,162 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   line-height: 1.5;
-  transition: background 0.3s, color 0.3s;
-  min-height: 100vh;
-  background-color: #f8fafc; /* fallback */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Remove default button styles for better consistency */
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Skip to content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f97316;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1001;
 }
 
-/* Smooth focus outline */
-:focus-visible {
-  outline: 2px solid #0ea5e9;
+.skip-link:focus {
+  top: 0;
+}
+
+/* Smooth transitions */
+section, div, button, a, span, p, h1, h2, h3, h4 {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Orange accent scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Orange glow effect */
+.orange-glow {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+/* Container */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible, 
+a:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid #f97316;
   outline-offset: 2px;
 }
 
-/* Smooth scrolling for anchor links */
-html {
-  scroll-padding-top: 80px; /* accounts for sticky navbar */
+/* Selection color */
+::selection {
+  background: #f97316;
+  color: white;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Better touch targets on mobile */
+  button, 
+  a,
+  [role="button"] {
+    min-height: 44px;
+  }
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+  background-size: 1000px 100%;
+}
+
+/* Dark mode skeleton */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(to right, #1e293b 4%, #334155 25%, #1e293b 36%);
+    background-size: 1000px 100%;
+  }
+}
+
+/* Print styles for CV */
+@media print {
+  .navbar,
+  .footer,
+  button,
+  .contact-form {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }
