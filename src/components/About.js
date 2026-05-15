@@ -3,7 +3,6 @@ import { useTheme } from "../context/ThemeContext";
 
 export default function About() {
   const { t } = useTheme();
-  const [activeTab, setActiveTab] = useState("ai");
   const [activeSkillTab, setActiveSkillTab] = useState("frontend");
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
@@ -22,14 +21,14 @@ export default function About() {
       "Firestore", "Prisma", "Database Design"
     ],
     aiMl: [
-      "Machine Learning", "Deep Learning", 
-      "Scikit learn", "Pandas", "NumPy", "Data Visualization",
-      "Natural Language Processing ", "Computer Vision", "OpenCV",
-      , , "Streamlit", 
+      "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch",
+      "Scikit-learn", "Pandas", "NumPy", "Data Visualization",
+      "Natural Language Processing (NLP)", "Computer Vision", "OpenCV",
+      "LangChain", "Hugging Face", "Streamlit", "LLM Integration"
     ],
     tools: [
       "Git & GitHub", "Docker", "Kubernetes", "AWS",
-      "Azure", "Postman", "Figma", "Vercel", "PyCharm","VS Code",
+      "Azure", "Postman", "Figma", "Vercel", "Netlify"
     ]
   };
 

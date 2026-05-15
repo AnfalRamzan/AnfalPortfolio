@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import profile from "../assets/images/profile3.png";
 import cv from "../assets/cv/resume.pdf";
 import { useTheme } from "../context/ThemeContext";
@@ -6,12 +6,12 @@ import { useTheme } from "../context/ThemeContext";
 export default function Hero() {
   const { t } = useTheme();
 
-  const texts = [
+  const texts = useMemo(() => [
     "Software Engineer",
     "Full Stack Developer",
     "MERN Stack Expert",
     "React Native Developer"
-  ];
+  ], []);
 
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");

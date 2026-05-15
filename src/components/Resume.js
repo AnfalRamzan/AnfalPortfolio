@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-// CV import - same path as Hero.js
 import cv from "../assets/cv/resume.pdf";
 
 export default function Resume() {
@@ -94,7 +93,6 @@ export default function Resume() {
 
   const handleDownloadCV = () => {
     try {
-      // Create a link element
       const link = document.createElement('a');
       link.href = cv;
       link.download = 'Anfal_Ramzan_CV.pdf';
@@ -195,7 +193,6 @@ export default function Resume() {
                 <p>🇵🇰 Urdu <span style={{ color: t.textLight }}>(Native)</span></p>
               </div>
 
-              {/* Download CV Button */}
               <div style={{ 
                 display: "flex", 
                 flexDirection: "column",
