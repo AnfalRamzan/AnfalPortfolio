@@ -1,17 +1,20 @@
 import { useEffect, useState, useMemo } from "react";
-import profile from "../assets/images/profile3.png";
+import profile from "../assets/images/anfalimage.png";
 import cv from "../assets/cv/resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Hero() {
   const { t } = useTheme();
 
-  const texts = useMemo(() => [
-    "Software Engineer",
-    "Full Stack Developer",
-    "MERN Stack Expert",
-    "React Native Developer"
-  ], []);
+  const texts = useMemo(
+    () => [
+      "Software Engineer",
+      "Full Stack Developer",
+      "MERN Stack Expert",
+      "React Native Developer",
+    ],
+    []
+  );
 
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -20,11 +23,13 @@ export default function Hero() {
 
   useEffect(() => {
     const currentFullText = texts[index];
-    
+
     const timer = setTimeout(() => {
       if (!isDeleting) {
         if (displayText.length < currentFullText.length) {
-          setDisplayText(currentFullText.substring(0, displayText.length + 1));
+          setDisplayText(
+            currentFullText.substring(0, displayText.length + 1)
+          );
           setTypingSpeed(100);
         } else {
           setTypingSpeed(2000);
@@ -32,7 +37,9 @@ export default function Hero() {
         }
       } else {
         if (displayText.length > 0) {
-          setDisplayText(currentFullText.substring(0, displayText.length - 1));
+          setDisplayText(
+            currentFullText.substring(0, displayText.length - 1)
+          );
           setTypingSpeed(50);
         } else {
           setIsDeleting(false);
@@ -70,7 +77,7 @@ export default function Hero() {
           pointerEvents: "none",
         }}
       />
-      
+
       <div
         style={{
           display: "flex",
@@ -110,6 +117,7 @@ export default function Hero() {
             }}
           >
             <span style={{ color: t.primary }}>{displayText}</span>
+
             <span
               style={{
                 display: "inline-block",
@@ -124,28 +132,44 @@ export default function Hero() {
 
           <style>{`
             @keyframes blink {
-              0%, 50% { opacity: 1; }
-              51%, 100% { opacity: 0; }
+              0%, 50% {
+                opacity: 1;
+              }
+              51%, 100% {
+                opacity: 0;
+              }
             }
+
             @keyframes float {
-              0% { transform: translateY(0px); }
-              50% { transform: translateY(-10px); }
-              100% { transform: translateY(0px); }
+              0% {
+                transform: translateY(0px);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+              100% {
+                transform: translateY(0px);
+              }
             }
+
             @media (max-width: 768px) {
               .hero-container {
                 flex-direction: column-reverse !important;
                 text-align: center !important;
               }
+
               .hero-content {
                 text-align: center !important;
               }
+
               .hero-buttons {
                 justify-content: center !important;
               }
+
               .tech-stack {
                 justify-content: center !important;
               }
+
               .hero-desc {
                 margin-left: auto !important;
                 margin-right: auto !important;
@@ -153,9 +177,18 @@ export default function Hero() {
             }
           `}</style>
 
-          <p style={{ color: t.textLight, fontSize: "16px", maxWidth: "500px", lineHeight: "1.7" }} className="hero-desc">
-            Software Engineer specializing in Full Stack Development and AI/ML integration. 
-            Built 40+ production-ready applications with modern technologies.
+          <p
+            style={{
+              color: t.textLight,
+              fontSize: "16px",
+              maxWidth: "500px",
+              lineHeight: "1.7",
+            }}
+            className="hero-desc"
+          >
+            Software Engineer specializing in Full Stack Development and AI/ML
+            integration. Built 40+ production-ready applications with modern
+            technologies.
           </p>
 
           <div
@@ -170,7 +203,9 @@ export default function Hero() {
             <button
               type="button"
               onClick={() =>
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
               }
               style={{
                 padding: "12px 28px",
@@ -184,7 +219,8 @@ export default function Hero() {
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = t.primaryDark || "#ea580c";
+                e.target.style.background =
+                  t.primaryDark || "#ea580c";
                 e.target.style.transform = "translateY(-3px)";
               }}
               onMouseLeave={(e) => {
@@ -195,7 +231,11 @@ export default function Hero() {
               Hire Me →
             </button>
 
-            <a href={cv} download style={{ textDecoration: "none" }}>
+            <a
+              href={cv}
+              download
+              style={{ textDecoration: "none" }}
+            >
               <button
                 type="button"
                 style={{
@@ -232,7 +272,15 @@ export default function Hero() {
             }}
             className="tech-stack"
           >
-            {["React", "React Native", "Node.js", "MongoDB", "Firebase", "Python", "AI/ML"].map((tech) => (
+            {[
+              "React",
+              "React Native",
+              "Node.js",
+              "MongoDB",
+              "Firebase",
+              "Python",
+              "AI/ML",
+            ].map((tech) => (
               <span
                 key={tech}
                 style={{
@@ -266,7 +314,10 @@ export default function Hero() {
               borderRadius: "30px",
               overflow: "hidden",
               animation: "float 3s ease-in-out infinite",
-              maxWidth: "320px",
+
+              // IMAGE SIZE BARA KR DIA
+              maxWidth: "clamp(320px, 40vw, 520px)",
+
               width: "100%",
             }}
           >
@@ -279,6 +330,7 @@ export default function Hero() {
                 zIndex: 1,
               }}
             />
+
             <img
               src={profile}
               alt="Anfal Ramzan - Software Engineer"
