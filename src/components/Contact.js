@@ -64,7 +64,6 @@ export default function Contact() {
 
   const contactMethods = [
     { icon: "📧", label: "Email", value: "anfalramzan548@gmail.com", link: "mailto:anfalramzan548@gmail.com" },
-    { icon: "📞", label: "Phone", value: "+92 327 4931708", link: "tel:+923274931708" },
     { icon: "💻", label: "GitHub", value: "/AnfalRamzan", link: "https://github.com/AnfalRamzan" },
     { icon: "🔗", label: "LinkedIn", value: "in/anfal-ramzan", link: "https://linkedin.com/in/anfal-ramzan-65b302362" },
   ];

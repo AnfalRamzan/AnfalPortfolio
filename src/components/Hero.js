@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
-import profile from "../assets/images/anfalimage.png";
-import cv from "../assets/cv/resume.pdf";
+import profile from "../assets/images/profile3.png";
+import cv from "../assets/cv/Anfal cv.pdf";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Hero() {
@@ -12,6 +12,8 @@ export default function Hero() {
       "Full Stack Developer",
       "MERN Stack Expert",
       "React Native Developer",
+      "Flutter Developer",
+      "Database Architect"
     ],
     []
   );
@@ -152,18 +154,22 @@ export default function Hero() {
               }
             }
 
-            @media (max-width: 768px) {
+            /* Enhanced Responsive Styles */
+            @media (max-width: 992px) {
               .hero-container {
                 flex-direction: column-reverse !important;
                 text-align: center !important;
+                gap: 30px !important;
               }
 
               .hero-content {
                 text-align: center !important;
+                width: 100% !important;
               }
 
               .hero-buttons {
                 justify-content: center !important;
+                flex-wrap: wrap !important;
               }
 
               .tech-stack {
@@ -173,6 +179,127 @@ export default function Hero() {
               .hero-desc {
                 margin-left: auto !important;
                 margin-right: auto !important;
+                max-width: 100% !important;
+                padding: 0 10px !important;
+              }
+            }
+
+            @media (max-width: 768px) {
+              .hero-container {
+                padding: 0 10px !important;
+              }
+
+              .hero-content h1 {
+                font-size: clamp(28px, 6vw, 40px) !important;
+              }
+
+              .hero-content div {
+                font-size: clamp(16px, 3.5vw, 20px) !important;
+                min-height: 60px !important;
+              }
+
+              .hero-buttons button {
+                padding: 10px 20px !important;
+                font-size: 13px !important;
+                width: auto !important;
+                min-width: 120px !important;
+              }
+
+              .tech-stack span {
+                padding: 5px 12px !important;
+                font-size: 11px !important;
+              }
+
+              .hero-desc {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+                max-width: 100% !important;
+              }
+
+              .hero-image {
+                width: 100% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
+              }
+            }
+
+            @media (max-width: 480px) {
+              .hero-container {
+                gap: 20px !important;
+                padding: 0 5px !important;
+              }
+
+              .hero-content h1 {
+                font-size: clamp(24px, 5vw, 32px) !important;
+              }
+
+              .hero-content div {
+                font-size: clamp(14px, 3vw, 18px) !important;
+                min-height: 50px !important;
+              }
+
+              .hero-buttons {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                width: 100% !important;
+              }
+
+              .hero-buttons button,
+              .hero-buttons a {
+                width: 100% !important;
+                max-width: 250px !important;
+              }
+
+              .hero-buttons a button {
+                width: 100% !important;
+              }
+
+              .tech-stack {
+                gap: 8px !important;
+              }
+
+              .tech-stack span {
+                padding: 4px 10px !important;
+                font-size: 10px !important;
+              }
+
+              .hero-desc {
+                font-size: 13px !important;
+                padding: 0 5px !important;
+              }
+
+              .hero-image {
+                max-width: 240px !important;
+              }
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              .hero-container {
+                gap: 35px !important;
+              }
+
+              .hero-content h1 {
+                font-size: clamp(30px, 5vw, 44px) !important;
+              }
+
+              .hero-image {
+                max-width: 350px !important;
+              }
+            }
+
+            /* Touch-friendly hover effects */
+            @media (hover: hover) {
+              .hero-buttons button:hover {
+                transform: translateY(-3px) !important;
+                transition: all 0.3s ease !important;
+              }
+            }
+
+            @media (hover: none) {
+              .hero-buttons button:active {
+                transform: scale(0.95) !important;
+                transition: all 0.1s ease !important;
               }
             }
           `}</style>
@@ -180,15 +307,16 @@ export default function Hero() {
           <p
             style={{
               color: t.textLight,
-              fontSize: "16px",
+              fontSize: "clamp(14px, 1.5vw, 16px)",
               maxWidth: "500px",
               lineHeight: "1.7",
+              marginBottom: "8px",
             }}
             className="hero-desc"
           >
-            Software Engineer specializing in Full Stack Development and AI/ML
+            Software Engineer specializing in Full Stack Development, Flutter, and AI/ML
             integration. Built 40+ production-ready applications with modern
-            technologies.
+            technologies including MySQL and Firebase.
           </p>
 
           <div
@@ -215,8 +343,9 @@ export default function Hero() {
                 cursor: "pointer",
                 fontWeight: "600",
                 color: "#fff",
-                fontSize: "14px",
+                fontSize: "clamp(13px, 1.2vw, 14px)",
                 transition: "all 0.3s ease",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => {
                 e.target.style.background =
@@ -246,8 +375,9 @@ export default function Hero() {
                   borderRadius: "40px",
                   cursor: "pointer",
                   fontWeight: "600",
-                  fontSize: "14px",
+                  fontSize: "clamp(13px, 1.2vw, 14px)",
                   transition: "all 0.3s ease",
+                  whiteSpace: "nowrap",
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = `${t.primary}10`;
@@ -275,8 +405,10 @@ export default function Hero() {
             {[
               "React",
               "React Native",
+              "Flutter",
               "Node.js",
               "MongoDB",
+              "MySQL",
               "Firebase",
               "Python",
               "AI/ML",
@@ -287,10 +419,20 @@ export default function Hero() {
                   padding: "6px 14px",
                   background: `${t.primary}08`,
                   borderRadius: "30px",
-                  fontSize: "12px",
+                  fontSize: "clamp(11px, 1vw, 12px)",
                   color: t.primary,
                   fontWeight: "500",
                   border: `1px solid ${t.primary}15`,
+                  transition: "all 0.3s ease",
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = `${t.primary}15`;
+                  e.target.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = `${t.primary}08`;
+                  e.target.style.transform = "scale(1)";
                 }}
               >
                 {tech}
@@ -314,11 +456,9 @@ export default function Hero() {
               borderRadius: "30px",
               overflow: "hidden",
               animation: "float 3s ease-in-out infinite",
-
-              // IMAGE SIZE BARA KR DIA
-              maxWidth: "clamp(320px, 40vw, 520px)",
-
+              maxWidth: "clamp(280px, 35vw, 480px)",
               width: "100%",
+              boxShadow: t.shadow,
             }}
           >
             <div
@@ -339,9 +479,15 @@ export default function Hero() {
                 height: "auto",
                 borderRadius: "30px",
                 objectFit: "cover",
-                boxShadow: t.shadow,
                 border: `2px solid ${t.primary}25`,
                 display: "block",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.02)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
               }}
             />
           </div>

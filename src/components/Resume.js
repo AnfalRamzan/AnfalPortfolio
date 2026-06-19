@@ -9,38 +9,35 @@ export default function Resume() {
 
   const coreSkills = [
     "React JS", "React Native", "Next.js", "Node.js", "Express.js",
-    "Python", "MongoDB", "MySQL", "Firebase", "REST APIs", "GraphQL"
+    "Python", "MongoDB", "MySQL", "PostgreSQL", "Firebase", "Firestore",
+    "REST APIs", "GraphQL", "Flutter", "HTML5", "CSS3", "JavaScript ES6+"
   ];
 
   const softSkills = [
-    "Project Management", "Time Management", "Team Collaboration", 
-    "Problem Solving", "Communication", "Critical Thinking", "Leadership"
+    "Critical Thinking", "Agile Leadership", "Team Collaboration", 
+    "Time Management", "Problem Solving", "Communication"
   ];
 
   const aiSkills = [
-    "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch",
-    "Scikit-learn", "Pandas", "NumPy", "Data Visualization",
-    "NLP", "LangChain", "Streamlit"
+    "Python", "Scikit-learn", "Pandas", "NumPy",
+    "Random Forest", "NLP", "OCR", "Tesseract", "Data Visualization"
   ];
 
   const otherSkills = [
-    "UI/UX Design", "Git & GitHub", "Docker", "AWS",
-    "Postman", "Figma", "Vercel", "Netlify"
+    "Git", "GitHub", "Postman", "Figma",
+    "VS Code", "Android Studio", "Flutter"
   ];
 
   const projects = [
-    { title: "Student Performance Prediction", tech: "ML + Python", desc: "85.42% accuracy prediction system" },
-    { title: "AI Document Detection System", tech: "OCR + NLP", desc: "Document classification and extraction" },
-    { title: "AI-Powered Billing System", tech: "React + Firebase", desc: "Smart invoicing with forecasting" },
-    { title: "Smart Goal Tracking App", tech: "React Native + MongoDB", desc: "Cross-platform goal tracking" },
-    { title: "e-Vitals App", tech: "React Native", desc: "Medical vitals monitoring" },
-    { title: "Student Portal", tech: "MERN Stack", desc: "Full-stack course platform" },
-    { title: "Hospital Management System", tech: "Firebase + React", desc: "Patient records management" },
-    { title: "Library Management System", tech: "React.js", desc: "Digital library platform" },
-    { title: "E-Commerce Platform", tech: "MERN Stack", desc: "Online store with payments" },
-    { title: "Chat Application", tech: "Socket.io + React", desc: "Real-time messaging app" },
-    { title: "Task Management System", tech: "React + Node.js", desc: "Project management tool" },
-    { title: "Portfolio CMS", tech: "Next.js + MongoDB", desc: "Developer portfolio CMS" }
+    { title: "Student Performance Prediction", tech: "Python + Random Forest", desc: "85.42% accuracy in forecasting academic outcomes" },
+    { title: "AI-Powered Billing System", tech: "React + Firebase", desc: "Smart invoicing with automated billing and revenue analytics" },
+    { title: "Hospital Management System", tech: "React + Firebase", desc: "Comprehensive HMS for patient records, appointments, and billing" },
+    { title: "E-Commerce Platform", tech: "HTML + CSS + JS", desc: "Full-featured store with JWT auth, cart, and payment gateway" },
+    { title: "Smart Goal Tracking App", tech: "React Native + MongoDB", desc: "Cross-platform app for goal tracking and progress monitoring" },
+    { title: "AI Document Detection", tech: "OCR + NLP + Tesseract", desc: "Intelligent system extracting and classifying text from scanned documents" },
+    { title: "eVitals Healthcare App", tech: "React Native + Firebase", desc: "Cross-platform app for appointment booking and patient management" },
+    { title: "TrynexTech Business Website", tech: "Next.js + React.js", desc: "Responsive corporate site with modern UI/UX and SEO" },
+    { title: "Tailor Management Software", tech: "Python + MySQL", desc: "Desktop-based management for customer records and order tracking" }
   ];
 
   const handleDownloadCV = () => {
@@ -98,7 +95,7 @@ export default function Resume() {
             {/* LEFT COLUMN */}
             <div>
               <h3 style={{ color: t.text, marginBottom: "4px", fontSize: "clamp(20px, 4vw, 24px)" }}>Anfal Ramzan</h3>
-              <p style={{ color: t.primary, fontWeight: "600", marginTop: "0", fontSize: "13px" }}>
+              <p style={{ color: t.primary, fontWeight: "600", marginTop: "0", fontSize: "clamp(12px, 1.2vw, 13px)" }}>
                 Software Engineer | Full Stack Developer | AI/ML
               </p>
 
@@ -107,13 +104,13 @@ export default function Resume() {
                   💻 Core Stack:
                 </p>
                 <p style={{ color: t.muted, fontSize: "13px", marginBottom: "4px" }}>
-                  React, React Native, Next.js, Node.js, Python
+                  React, React Native, Next.js, Node.js, Python, Flutter
                 </p>
                 <p style={{ color: t.muted, fontSize: "13px", marginBottom: "4px" }}>
-                  MongoDB, MySQL, Firebase, PostgreSQL
+                  MongoDB, MySQL, PostgreSQL, Firebase, Firestore
                 </p>
                 <p style={{ color: t.muted, fontSize: "13px" }}>
-                  Git, Docker, AWS, Postman, VS Code
+                  Git, Docker, Postman, VS Code, Android Studio
                 </p>
               </div>
 
@@ -122,22 +119,38 @@ export default function Resume() {
                 <p>📞 +92 327 4931708</p>
                 <p>📧 anfalramzan548@gmail.com</p>
                 <p>📍 Rawalpindi, Pakistan</p>
-                <p>🔗 linkedin.com/in/anfal-ramzan</p>
-                <p>🐙 github.com/AnfalRamzan</p>
+                <p>🔗 linkedin.com/in/anfalramzan</p>
+                <p>🐙 github.com/anfalramzan</p>
               </div>
 
               <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Education</h3>
               <div style={{ color: t.muted, lineHeight: "1.8", fontSize: "13px" }}>
                 <p><strong style={{ color: t.text }}>BS Software Engineering</strong></p>
                 <p>Riphah International University</p>
-                <p>2023 – 2025 | CGPA: 3.6/4.0</p>
+                <p>2023 – Present</p>
               </div>
 
-              <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Experience</h3>
-              <div style={{ color: t.muted, lineHeight: "1.8", fontSize: "13px" }}>
-                <p><strong style={{ color: t.text }}>Full Stack Developer</strong></p>
-                <p>Freelance | 2020 - Present</p>
-                <p style={{ fontSize: "12px", marginTop: "4px" }}>40+ projects delivered with 100% satisfaction</p>
+              <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Work Experience</h3>
+              <div style={{ color: t.muted, lineHeight: "1.6", fontSize: "13px" }}>
+                <p><strong style={{ color: t.text }}>Software Engineer & Full Stack Developer</strong></p>
+                <p style={{ color: t.primary, fontSize: "12px" }}>OriginITSoft Software House | Jun 2024 – Present</p>
+                <p style={{ fontSize: "12px", marginTop: "4px" }}>• Design and engineer scalable web applications</p>
+                <p style={{ fontSize: "12px" }}>• Consult with international clients to translate business requirements</p>
+
+                <p style={{ marginTop: "12px" }}><strong style={{ color: t.text }}>Backend Developer</strong></p>
+                <p style={{ color: t.primary, fontSize: "12px" }}>Riphah International University | 7 Months (Contract)</p>
+                <p style={{ fontSize: "12px", marginTop: "4px" }}>• Developed secure university web apps</p>
+                <p style={{ fontSize: "12px" }}>• Integrated mission-critical backend microservices</p>
+
+                <p style={{ marginTop: "12px" }}><strong style={{ color: t.text }}>Frontend Developer Intern</strong></p>
+                <p style={{ color: t.primary, fontSize: "12px" }}>Revive Medical Technologies</p>
+                <p style={{ fontSize: "12px", marginTop: "4px" }}>• Contributed to enterprise healthcare web apps</p>
+                <p style={{ fontSize: "12px" }}>• Assisted in feature deployment and debugging</p>
+
+                <p style={{ marginTop: "12px" }}><strong style={{ color: t.text }}>Frontend Developer</strong></p>
+                <p style={{ color: t.primary, fontSize: "12px" }}>iLab Solution, Sahiwal | 6 Months</p>
+                <p style={{ fontSize: "12px", marginTop: "4px" }}>• Developed responsive web apps using modern frontend technologies</p>
+                <p style={{ fontSize: "12px" }}>• Integrated APIs across projects</p>
               </div>
 
               <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Languages</h3>
@@ -146,28 +159,38 @@ export default function Resume() {
                 <p>🇵🇰 Urdu <span style={{ color: t.textLight }}>(Native)</span></p>
               </div>
 
+              <h3 style={{ color: t.text, marginTop: "25px", fontSize: "18px" }}>Certifications</h3>
+              <div style={{ color: t.muted, fontSize: "12px", lineHeight: "1.8" }}>
+                <p>• Web Development — Bano Qabil (2024)</p>
+                <p>• React.js Development — Coursera (2024)</p>
+                <p>• Node.js Backend Dev — Udemy (2024)</p>
+                <p>• AI & ML Fundamentals — Simplilearn (2024)</p>
+                <p>• Responsive Web Design — freeCodeCamp (2023)</p>
+                <p>• Problem Solving — HackerRank (2024)</p>
+              </div>
+
+              {/* SMALLER CENTERED DOWNLOAD BUTTON */}
               <div style={{ 
                 display: "flex", 
-                flexDirection: "column",
-                alignItems: "center", 
+                justifyContent: "center",
                 marginTop: "30px",
                 marginBottom: "10px"
               }}>
                 <button
                   onClick={handleDownloadCV}
                   style={{
-                    padding: "12px 28px",
+                    padding: "8px 20px",
                     background: t.primary,
                     border: "none",
-                    borderRadius: "40px",
+                    borderRadius: "30px",
                     color: "#fff",
                     fontWeight: "600",
                     cursor: "pointer",
-                    fontSize: "14px",
+                    fontSize: "12px",
                     transition: "0.2s",
                     display: "flex",
                     alignItems: "center",
-                    gap: "8px",
+                    gap: "6px",
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.transform = "translateY(-2px)";
@@ -180,25 +203,27 @@ export default function Resume() {
                 >
                   <span>📄</span> Download CV
                 </button>
-                {downloadError && (
-                  <p style={{ 
-                    color: "#ef4444", 
-                    fontSize: "12px", 
-                    marginTop: "10px",
-                    textAlign: "center"
-                  }}>
-                    ⚠️ CV file not found. Please add your CV PDF to the assets/cv folder.
-                  </p>
-                )}
               </div>
+              {downloadError && (
+                <p style={{ 
+                  color: "#ef4444", 
+                  fontSize: "11px", 
+                  marginTop: "8px",
+                  textAlign: "center"
+                }}>
+                  ⚠️ CV file not found. Please add your CV PDF to the assets/cv folder.
+                </p>
+              )}
             </div>
 
             {/* RIGHT COLUMN */}
             <div>
               <h3 style={{ color: t.text, fontSize: "18px" }}>Profile</h3>
               <p style={{ color: t.textLight, lineHeight: "1.7", fontSize: "14px", marginBottom: "20px" }}>
-                Software Engineer with 5+ years of experience in Full Stack Development and AI/ML. 
-                Built 40+ production-ready applications with 100% client satisfaction.
+                Passionate Software Engineer & Full Stack Developer with 2+ years of experience 
+                designing and deploying scalable web and mobile applications. Skilled in modern 
+                frameworks, database architecture, and AI-powered solutions with a proven track 
+                record of delivering user-focused software.
               </p>
 
               <h3 style={{ color: t.text, marginTop: "20px", fontSize: "18px" }}>Core Technologies</h3>
@@ -270,7 +295,7 @@ export default function Resume() {
                 ))}
               </div>
 
-              <h3 style={{ color: t.text, marginTop: "15px", fontSize: "18px" }}>Tools</h3>
+              <h3 style={{ color: t.text, marginTop: "15px", fontSize: "18px" }}>Tools & Platforms</h3>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "10px", marginBottom: "25px" }}>
                 {otherSkills.map((skill, i) => (
                   <span 
@@ -293,19 +318,27 @@ export default function Resume() {
                 ))}
               </div>
 
-              <h3 style={{ color: t.text, fontSize: "18px" }}>Key Projects (40+)</h3>
-              <div style={{ color: t.muted, lineHeight: "1.6", fontSize: "13px", maxHeight: "350px", overflowY: "auto", paddingRight: "10px" }}>
+              <h3 style={{ color: t.text, fontSize: "18px" }}>Key Projects (20+ Delivered)</h3>
+              <div style={{ 
+                color: t.muted, 
+                lineHeight: "1.6", 
+                fontSize: "13px", 
+                maxHeight: "350px", 
+                overflowY: "auto", 
+                paddingRight: "10px",
+                scrollbarWidth: "thin"
+              }}>
                 {projects.map((proj, idx) => (
-                  <div key={idx} style={{ marginBottom: "12px" }}>
+                  <div key={idx} style={{ marginBottom: "12px", paddingBottom: "12px", borderBottom: idx < projects.length - 1 ? `1px solid ${t.border}` : "none" }}>
                     <strong style={{ color: t.primary }}>{proj.title}</strong>
-                    <span style={{ fontSize: "10px", color: t.textLight, marginLeft: "8px" }}>({proj.tech})</span>
+                    <span style={{ fontSize: "10px", color: t.textLight, marginLeft: "8px" }}>• {proj.tech}</span>
                     <p style={{ margin: "4px 0 0 0", fontSize: "11px", color: t.textLight }}>
                       {proj.desc}
                     </p>
                   </div>
                 ))}
-                <p style={{ color: t.primary, fontSize: "12px", textAlign: "center", marginTop: "10px" }}>
-                  + 28 more projects delivered
+                <p style={{ color: t.primary, fontSize: "12px", textAlign: "center", marginTop: "10px", fontWeight: "600" }}>
+                  🚀 20+ Production-Ready Solutions Delivered
                 </p>
               </div>
             </div>
@@ -318,6 +351,25 @@ export default function Resume() {
           .resume-grid {
             grid-template-columns: 1fr !important;
           }
+        }
+
+        /* Scrollbar styling */
+        .resume-grid div:last-child div:last-child::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        .resume-grid div:last-child div:last-child::-webkit-scrollbar-track {
+          background: ${t.border}40;
+          border-radius: 10px;
+        }
+
+        .resume-grid div:last-child div:last-child::-webkit-scrollbar-thumb {
+          background: ${t.primary}60;
+          border-radius: 10px;
+        }
+
+        .resume-grid div:last-child div:last-child::-webkit-scrollbar-thumb:hover {
+          background: ${t.primary};
         }
       `}</style>
     </section>
